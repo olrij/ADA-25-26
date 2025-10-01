@@ -11,9 +11,9 @@ import java.util.ArrayList;
 public class FicherosBinarios {
 
     public static void main(String[] args) {
-        // escribirFichero();
-        //leerFichero();
-        obtenerNotasEnLista();
+        //escribirFichero();
+        leerFichero();
+        //obtenerNotasEnLista();
 
     }
 
