@@ -12,7 +12,16 @@ public class Main {
 
         //conexion.ejecutarOperacionDML("UPDATE persona SET nombre='Pablito Pérez' WHERE id=2");
 
-        conexion.ejecutarOperacionDML("DELETE FROM es_padre WHERE id_padre=3");
+        //conexion.ejecutarOperacionDML("DELETE FROM es_padre WHERE id_padre=3");
         
+        //conexion.consultarTodoPersona();
+
+
+        conexion.consultarPadresDeUnaPersona(1);
+
+
+        conexion.cerrarConexion();
+
+
     }
 }
