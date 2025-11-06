@@ -8,7 +8,7 @@ import java.sql.Statement;
 public class Main {
     public static void main(String[] args) throws SQLException {
 
-        Conexion conexion=new Conexion();
+        GestorBD conexion=new GestorBD();
 
         //conexion.ejecutarOperacionDML("UPDATE persona SET nombre='Pablito Pérez' WHERE id=2");
 
@@ -16,12 +16,15 @@ public class Main {
         
         //conexion.consultarTodoPersona();
 
+        //conexion.consultarPadresDeUnaPersona(1);
 
-        conexion.consultarPadresDeUnaPersona(1);
+        //conexion.verMetadatos();
 
+        //conexion.consultarPadresDeUnaPersonaProced(1);
+
+        conexion.insertarFamilia();
 
         conexion.cerrarConexion();
-
 
     }
 }
