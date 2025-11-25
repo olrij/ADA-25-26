@@ -15,25 +15,74 @@ public class Main {
     	
     	EntityManager em = emf.createEntityManager();
     	
-    	Persona persona1=new Persona(100,"Pepito","Calle Esclava del Señor SN",LocalDate.of(2000, 12, 31));
+
+    	//borrarPersonaX(100,em);
     	
-    	EntityTransaction t = em.getTransaction();
+    	Persona personaNueva=new Persona(200,"RRRRRRRRRRRR","UUUUUUUUUUUUU",LocalDate.of(1800,12,12));
     	
-    	t.begin();
+    	insertarPersonaConMerge(personaNueva,em);
     	
-    	em.persist(persona1);
     	
-    	t.commit();
+    	
     	
     	em.close();
     	
     	
-    	
-    	
-    	
+  
     	
     
     	
     	
     }
+    
+    public static void borrarPersonaX(int id,EntityManager em) {
+    	
+    	
+    	EntityTransaction t = em.getTransaction();
+    	
+    	t.begin();
+    	
+    	Persona p=em.find(Persona.class, id);
+    	
+    	if(p!=null) {
+    		em.remove(p);
+    		System.out.println("Persona borrada");
+    	}else {
+    		System.out.println("No existe la persona");
+    	}
+    	
+    	t.commit();
+    	
+    	
+    	
+    }
+    
+    public static void insertarPersonaConMerge(Persona p,EntityManager em) {
+    	
+    	
+    	EntityTransaction t = em.getTransaction();
+    	
+    	t.begin();
+
+    	
+    	Persona p2=em.merge(p);
+    	
+    	
+    	p2.setDireccion("XXX");
+    	
+    	
+    	
+    	t.commit();
+    	
+    	
+    	
+    }
+    
+    
+    
+    
+    
+    
+    
+    
 }
